@@ -1,0 +1,13 @@
+.Taskbar{
+    height: $taskbar-height;
+    width: 40%;
+    position: absolute;
+    bottom: $taskbar-bottom-gutter;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(#000,.1);
+    border-radius: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+	border-left: 1px solid rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(5px);
+}

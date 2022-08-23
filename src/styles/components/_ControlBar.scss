@@ -1,0 +1,19 @@
+.ControlBar{
+    position: absolute;
+    height: 15px;
+    background-color: #fcfcfc;
+    width: 100%;
+    cursor : grab;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+
+    &__icon{
+        cursor: pointer;
+        width: 1.2rem;
+        height: 1.2rem;
+        &:not(:last-child){
+            margin-right: .2rem;
+        }
+    }
+}

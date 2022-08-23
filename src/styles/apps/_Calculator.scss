@@ -1,0 +1,90 @@
+.Calculator{
+    position: absolute;
+    background-color: $swatch_1;
+    height: 45rem;
+    width: 25rem;
+    border-radius: 5px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    &__content{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-top: 15px;
+    }
+
+    &__screen{
+        flex: 0 0 30%;
+        background-color: $swatch_1;
+    }
+
+    &__keyboard{
+        flex : 1;
+        background-color: $swatch_2;
+        border-top-right-radius: 1.5rem;
+        border-top-left-radius: 1.5rem;
+        display: flex;
+        overflow: hidden;
+        .keyboard__left{
+            flex: 0 0 75%;
+            padding : 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .keyboard__right{
+            flex: 1;
+            padding-top: 1rem;
+            padding-right: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: -5px;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    
+}
+
+.keyboard__key{
+    height: 5rem;
+    width: 5rem;
+    background-color: aliceblue;
+    border-radius : 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    cursor: pointer;
+
+    &:not(:nth-child(3n)){
+        margin-right: .5rem;
+    }
+    
+    &.firstLine{
+        color : #21e6c1;
+    }
+}
+
+.keyboard__key--spe{
+    height: 5rem;
+    width: 5rem;
+    background-color: aliceblue;
+    margin-bottom: .65rem;
+    border-radius : 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.image__icon__key{
+    width: 2.4rem;
+    width: 2.4rem;
+}

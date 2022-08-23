@@ -1,0 +1,6 @@
+.AppContainer{
+    height: calc(100% - #{$taskbar-height} - #{$taskbar-bottom-gutter} );
+    width: 100%;
+    border-radius: 10px;
+    position: relative;
+}
