@@ -19,6 +19,47 @@
     &__screen{
         flex: 0 0 30%;
         background-color: $swatch_1;
+        position: relative;
+    }
+
+    &__result{
+        font-size: 3.5rem;
+        text-align: right;
+        position: absolute;
+        bottom: 5rem;
+        right: 0;
+        display: inline-block;
+        overflow: hidden;
+        width: 100%;
+        border: none;
+        background-color: transparent;
+        margin-right: 2rem;
+        color : #000;
+        outline: none;
+    }
+
+    &__input{
+        width: 100%;
+        position: absolute;
+        bottom: 2rem;
+        border: none;
+        background-color: transparent;
+        text-align: right;
+        padding: 1rem;
+        padding-right: 2rem;
+        outline: none;
+
+        /* Chrome, Safari, Edge, Opera */
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+
+        /* Firefox */
+        &[type=number] {
+        -moz-appearance: textfield;
+        }
     }
 
     &__keyboard{
@@ -49,44 +90,4 @@
         }
     }
     
-}
-
-.keyboard__key{
-    height: 5rem;
-    width: 5rem;
-    background-color: aliceblue;
-    border-radius : 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.4rem;
-    font-weight: bold;
-    cursor: pointer;
-
-    &:not(:nth-child(3n)){
-        margin-right: .5rem;
-    }
-    
-    &.firstLine{
-        color : #21e6c1;
-    }
-}
-
-.keyboard__key--spe{
-    height: 5rem;
-    width: 5rem;
-    background-color: aliceblue;
-    margin-bottom: .65rem;
-    border-radius : 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.4rem;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.image__icon__key{
-    width: 2.4rem;
-    width: 2.4rem;
 }

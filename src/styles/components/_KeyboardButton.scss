@@ -1,0 +1,40 @@
+
+.keyboard__key{
+    height: 5rem;
+    width: 5rem;
+    background-color: aliceblue;
+    border-radius : 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:not(:nth-child(3n)){
+        margin-right: .5rem;
+    }
+    
+    &.firstLine{
+        color : #21e6c1;
+    }
+}
+
+.keyboard__key--spe{
+    height: 5rem;
+    width: 5rem;
+    background-color: aliceblue;
+    margin-bottom: .65rem;
+    border-radius : 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.image__icon__key{
+    width: 2.4rem;
+    width: 2.4rem;
+}

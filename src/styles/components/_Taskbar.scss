@@ -1,6 +1,6 @@
 .Taskbar{
     height: $taskbar-height;
-    width: 40%;
+    min-width: 40%;
     position: absolute;
     bottom: $taskbar-bottom-gutter;
     left: 50%;
@@ -10,4 +10,44 @@
     border-top: 1px solid rgba(255, 255, 255, 0.5);
 	border-left: 1px solid rgba(255, 255, 255, 0.5);
 	backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+    &__icon{
+        cursor: pointer;
+        width: 4.5rem;
+        height: 4.5rem;
+        border-radius: .5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        transition: all .2s ease;
+
+        img{
+            width: 3rem;
+            height: 3rem;
+        }
+
+        span{
+            height: .3rem;
+            width: 1rem;
+            border-radius: 1rem;
+            background-color: $app_selector_color;
+            transition: all .2s ease;
+        }
+
+        &:hover{
+            background-color: rgba($app_selector_background,.4);
+            box-shadow:  20px 20px 60px #bebebe,
+                    -20px -20px 60px #ffffff;
+
+            span{
+                width: 2rem; 
+            }
+        }
+    }
+
 }
