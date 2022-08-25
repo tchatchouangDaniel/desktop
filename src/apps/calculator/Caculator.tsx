@@ -23,28 +23,50 @@ function Calculator() {
       setInput(value)
   }
 
-  const handleButtonClick = (value : string|number) : void => {
+  const handleButtonClick = (id : string, value : string|number) : void => {
     const val = value.toString()
     if(input.length === 0){
       if(val.match(/^[1-9]*$/)){
         handleChange(undefined, input + val);
       }
-    }else {
-      if(input.at(-1)?.match(/\+|\-|\/|x/g) && val.match(/\+|\-|\/|x/g)){
-        handleChange(undefined,(input.substring(0,input.length -1) + val));
-      }else if(val.match(/^[0-9]*$/) || val.match(/\+|\-|\/|x/g) || val === "."){
-        handleChange(undefined, input + val);
-      }else if(val === "="){
-        if(!input.at(-1)?.match(/\+|\-|\/|x/g) && input.at(-1) !== "."){
-          const parsedInput = input.replaceAll("x","*")
-          setResult(calculator(parsedInput));
-        }
+      if(val === "."){
+        setInput("0.")
       }
-    }
-
-    if(val === "AC"){
+    }else if(val === "AC"){
       setInput("");
       setResult(0);
+    }else if(id.includes("backspace")){
+      setInput(input.substring(0, input.length -1));
+    }else if(id.includes("negate")){
+      if(input[0] === "-"){
+        let newInput = input;
+        newInput = newInput.substring(2)
+        newInput = newInput.substring(newInput.length-1,-1)
+        setInput(newInput);
+      }else{
+        setInput(`-(${input})`)
+      }
+    }else{
+      if(val === "0" && input.at(-2)?.match(/\+|\-|\/|x|%/g) && input.at(-1) === "0"){
+        return;
+      }else if(val === "." && input.includes(".")){
+        return;
+      }else if(input.at(-1)?.match(/\+|\-|\/|x|%/g) && val.match(/\+|\-|\/|x|%/g)){
+        handleChange(undefined,(input.substring(0,input.length -1) + val));
+      }else if(val.match(/^[0-9]*$/) || val.match(/\+|\-|\/|x|%/g) || val === "."){
+        handleChange(undefined, input + val);
+      }else if(val === "="){
+      
+        if(!input.at(-1)?.match(/\+|\-|\/|x|%/g) && input.at(-1) !== "."){
+          const parsedInput = input.replaceAll("x","*")
+          console.error(parsedInput)
+          const result = calculator(parsedInput);
+          setInput(result.toString())
+          setResult(result);
+          
+        }
+      }
+      
     }
   }
   return (

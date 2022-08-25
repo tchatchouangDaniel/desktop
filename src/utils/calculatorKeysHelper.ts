@@ -1,5 +1,5 @@
 import negate from "../assets/icons/negate.png";
-import reset from "../assets/icons/reset.png";
+import backspace from "../assets/icons/backspace.png";
 
 type CalcKeys = {
     id : string,
@@ -45,7 +45,7 @@ export const numberKeys = [
     },
     {
       id: "backspace icon",
-      value: reset
+      value:  backspace
     },
     {
       id: "number-0",
